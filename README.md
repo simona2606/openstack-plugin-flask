@@ -33,4 +33,4 @@ You can visit the Flask application at:
 ```bash
 http://<devstack_host>:5234
 ```
-It will display a "Hello, World!" message.
+It will display a "Hello, Beautiful People!" message.
