@@ -1,1 +1,8 @@
-define_plugin template
+# settings openstack
+enable_service flask-openstack-plugin
+
+# used directories
+PLUGIN_DIR=$DEST/flask-openstack-plugin
+APP_DIR=$PLUGIN_DIR/app
+SERVICE_DIR=$PLUGIN_DIR/devstack/service
+SYSTEMD_DIR=/etc/systemd/system
