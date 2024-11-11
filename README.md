@@ -17,6 +17,7 @@ If you haven't already, clone the DevStack repository to your environment:
 ```bash
 git clone https://github.com/openstack/devstack.git
 cd devstack
+```
 
 ### 2. Add the Plugin to local.conf
 
@@ -25,3 +26,4 @@ Add this repository as an external plugin in your local.conf file by including t
 [[local|localrc]]
    ...
 enable_plugin flask-openstack-plugin https://github.com/carmine-ambrosino/flask-openstack-plugin.git main
+```
