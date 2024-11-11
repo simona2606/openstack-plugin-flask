@@ -27,3 +27,17 @@ Add this repository as an external plugin in your local.conf file by including t
    ...
 enable_plugin flask-openstack-plugin https://github.com/carmine-ambrosino/flask-openstack-plugin.git main
 ```
+This will tell DevStack to fetch and enable the flask-openstack-plugin during the installation process.
+
+### 3. Run stack.sh
+Run the stack.sh script to install and configure your DevStack environment, including the Flask plugin:
+```bash
+./stack.sh
+```
+Once the script completes, your plugin will be set up and the Flask application will be running.
+
+You can visit the Flask application at:
+```bash
+http://<devstack_host>:5234
+```
+It will display a "Hello, World!" message.
