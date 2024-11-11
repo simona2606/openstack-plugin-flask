@@ -27,15 +27,15 @@ function install_flask_dependencies {
 # Move service file function
 function copy_service_file {
     echo "Moving service file to systemd directory..."
-    sudo cp "$SERVICE_DIR/flask-openstack-plugin.service" "$SYSTEMD_DIR" || { echo "Failed to copy service file"; exit 1; }
-    sudo systemctl enable flask-openstack-plugin.service || { echo "Failed to enable systemd plugin service"; exit 1; }
+    sudo cp "$SERVICE_DIR/openstack-plugin-flask.service" "$SYSTEMD_DIR" || { echo "Failed to copy service file"; exit 1; }
+    sudo systemctl enable openstack-plugin-flask.service || { echo "Failed to enable systemd plugin service"; exit 1; }
     sudo systemctl daemon-reload || { echo "Failed to reload systemd daemon"; exit 1; }
 }
 
 # Start flask plugin
 function start_flask_plugin {
     echo "Starting Flask service..."
-    sudo systemctl start flask-openstack-plugin.service || { echo "Failed to start service"; exit 1; }
+    sudo systemctl start openstack-plugin-flask.service || { echo "Failed to start service"; exit 1; }
 }
 
 # Configure flask plugin
@@ -44,7 +44,7 @@ function configure_flask_plugin {
     # Add configuration here
 }
 
-if is_service_enabled flask-openstack-plugin; then
+if is_service_enabled openstack-plugin-flask; then
 
     if [[ "$1" == "stack" && "$2" == "pre-install" ]]; then
         echo_summary "No additional packages to install for Flask Plugin."
@@ -65,10 +65,10 @@ if is_service_enabled flask-openstack-plugin; then
 
     if [[ "$1" == "unstack" ]]; then
         echo_summary "Stopping Flask service..."
-        sudo systemctl stop flask-openstack-plugin.service || { echo "Failed to stop service"; exit 1; }
+        sudo systemctl stop openstack-plugin-flask.service || { echo "Failed to stop service"; exit 1; }
     fi
 
     if [[ "$1" == "clean" ]]; then
-        sudo rm "$SYSTEMD_DIR/flask-openstack-plugin.service"
+        sudo rm "$SYSTEMD_DIR/openstack-plugin-flask.service"
     fi
 fi

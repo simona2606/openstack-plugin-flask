@@ -1,8 +1,8 @@
 # settings openstack
-enable_service flask-openstack-plugin
+enable_service openstack-plugin-flask
 
 # used directories
-PLUGIN_DIR=$DEST/flask-openstack-plugin
+PLUGIN_DIR=$DEST/openstack-plugin-flask
 APP_DIR=$PLUGIN_DIR/app
 SERVICE_DIR=$PLUGIN_DIR/devstack/service
 SYSTEMD_DIR=/etc/systemd/system
