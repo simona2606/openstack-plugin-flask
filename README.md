@@ -6,7 +6,7 @@ This repository provides an example of how to extend OpenStack functionality wit
 
 To use this plugin, you'll need to have **DevStack** installed. You can download DevStack from the official repository:
 
-- [DevStack GitHub](https://github.com/openstack/devstack)
+- [Guide on how to install DevStack](https://docs.openstack.org/devstack/latest/)
 
 ## Setup Instructions
 
